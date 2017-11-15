@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+
+    >
+
+    <LinearLayout
+        android:id="@+id/introMoodLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        >
+
+        <TextView
+            android:layout_width="181dp"
+            android:layout_height="37dp"
+            android:text="@string/tvHowFeelingTitle"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:typeface="sans" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/laugh_emoji"/>
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/happy_emoji"/>
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sad_emoji"/>
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angry_emoji"/>
+        </android.support.v7.widget.ButtonBarLayout>
+
+        <Button
+            android:id="@+id/btnMoodTest"
+            android:layout_width="wrap_content"
+            android:layout_height="35sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/orange_rounded_layout"
+            android:padding="10dp"
+            android:text="@string/moodButton"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/checkUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Check Up"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            />
+        <TextView
+            android:id="@+id/teaserTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:layout_marginTop="6dp"
+            android:text="Teaser"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:typeface="sans"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/teasermLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/introMoodLayout"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/teaserTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@android:color/white"
+            />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz1"
+            android:textColor="@android:color/white"
+            android:paddingTop="3dp"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp">
+
+            <android.support.v7.widget.AppCompatEditText
+                style="@android:style/Widget.EditText"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@android:color/white"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orange_rounded_layout"
+                android:text="Go"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz2"
+            android:textColor="@android:color/white"
+            android:paddingTop="3dp"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/txt_dark"
+                android:text="Android"
+                android:textColor="@android:color/white"/>
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="3"
+                android:background="@drawable/txt_dark"
+                android:layout_height="wrap_content"
+                android:text="iOS"
+                android:textColor="@android:color/white"
+                />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_weight="2"
+                android:background="@drawable/txt_dark"
+                android:layout_height="wrap_content"
+                android:text="Windows Phone"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/exploreLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/teaserLayout"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exploreTitle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@android:color/white"
+            />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent"/>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp">
+            <TextView
+                android:id="@+id/teaserQuizTwoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:text="What is 3*6+(6/2) ?"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/teaserQuizTwoTv1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/txt_dark"
+                    android:text="21"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:minHeight="30dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/teaserQuizTwoTv2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/txt_dark"
+                    android:text="27"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:minHeight="30dp"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/teaserQuizTwoTv3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/txt_dark"
+                    android:text="24"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:minHeight="30dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

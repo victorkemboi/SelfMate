@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SelfMate</string>
+    <string name="tvHowFeelingTitle">How are you feeling?</string>
+    <string name="moodButton">Mood Test </string>
+    <string name="teaserTitle">Teaser</string>
+    <string name="exploreTitle">Explore Topics</string>
+    <string name="quiz1">The name your best friend? </string>
+    <string name="quiz2">Which Mobile OS do you prefer?</string>
+</resources>

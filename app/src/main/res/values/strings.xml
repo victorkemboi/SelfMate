@@ -6,4 +6,9 @@
     <string name="exploreTitle">Explore Topics</string>
     <string name="quiz1">The name your best friend? </string>
     <string name="quiz2">Which Mobile OS do you prefer?</string>
+    <string name="teaserQuizOneTv">Do you have a best friend?</string>
+    <string name="teaserQuizOneTv1">Yes</string>
+    <string name="teaserQuizOneTv2">No</string>
+    <string name="teaserQuizOneTv3">Need One</string>
+    teaserQuizOneTv
 </resources>

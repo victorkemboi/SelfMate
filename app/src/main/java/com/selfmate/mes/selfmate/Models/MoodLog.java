@@ -2,6 +2,7 @@ package com.selfmate.mes.selfmate.Models;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.arch.persistence.room.TypeConverters;
 
@@ -21,25 +22,18 @@ public class MoodLog {
     private int uid;
 
     @ColumnInfo(name = "mood")
-    private String mood;
+    private int mood;
 
     @ColumnInfo(name = "time")
     private Date time;
 
+    @Ignore
     public MoodLog() {
     }
 
-    public MoodLog(String mood, Date time) {
+    public MoodLog(int mood, Date time) {
         this.mood = mood;
         this.time = time;
-    }
-
-    public String getMood() {
-        return mood;
-    }
-
-    public void setMood(String mood) {
-        this.mood = mood;
     }
 
     public Date getTime() {
@@ -56,5 +50,13 @@ public class MoodLog {
 
     public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    public int getMood() {
+        return mood;
+    }
+
+    public void setMood(int mood) {
+        this.mood = mood;
     }
 }

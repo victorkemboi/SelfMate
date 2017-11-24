@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorYellow"
     android:backgroundTintMode="screen"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:paddingEnd="6dp"
-    android:paddingStart="6dp">
+
+    android:animateLayoutChanges="true">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -36,6 +37,7 @@
         android:id="@+id/introMoodLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible"
@@ -61,29 +63,45 @@
 
             <ImageButton
                 android:id="@+id/laugh_emoji"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="2dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/laugh_emoji" />
 
             <ImageButton
                 android:id="@+id/happy_emoji"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorWhite"
+                android:padding="2dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/happy_emoji" />
 
             <ImageButton
                 android:id="@+id/sad_emoji"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sad_emoji" />
 
             <ImageButton
                 android:id="@+id/angry_emoji"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorWhite"
+                android:padding="4dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/angry_emoji" />
         </android.support.v7.widget.ButtonBarLayout>
@@ -136,12 +154,13 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvBarEngagementResults"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="10"
-                            android:textColor="@color/colorPrimaryDark"
 
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="18sp"
                             android:typeface="sans" />
 
@@ -163,20 +182,20 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvBarRxpointsResults"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Technology"
+                            android:text="200"
                             android:textColor="@color/colorPrimaryDark"
-
-                            android:textSize="16sp"
+                            android:textSize="18sp"
                             android:typeface="sans" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Best Topic"
+                            android:text="RX Points"
                             android:textColor="@color/colorAccent"
                             android:textSize="12sp"
                             android:typeface="sans" />
@@ -185,15 +204,27 @@
 
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/userProfile"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                <LinearLayout
+                    android:id="@+id/userProfileLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/chart_black" />
+                    android:background="@drawable/orange_rounded_layout"
+                    android:padding="5dp">
 
 
+                    <ImageView
+                        android:id="@+id/userProfile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/chart_black" />
+
+
+                </LinearLayout>
             </LinearLayout>
 
 
@@ -203,37 +234,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/mainResponseLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout"
-        tools:layout_editor_absoluteX="6dp">
-
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </android.support.v7.widget.RecyclerView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/userResultsMainLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="80dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -255,7 +265,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Happy"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
                     android:typeface="sans" />
 
@@ -264,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Mostly"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorPrimaryDark"
 
                     android:textSize="12sp"
                     android:typeface="sans" />
@@ -280,21 +290,22 @@
                 android:padding="15dp">
 
                 <TextView
+                    android:id="@+id/tvMainRxpointsResults"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="10"
-                    android:textColor="@android:color/black"
-
+                    android:text="250"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
                     android:typeface="sans" />
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Engagments"
-                    android:textColor="@color/colorWhite"
+                    android:text="RX Points"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp"
                     android:typeface="sans" />
             </LinearLayout>
@@ -321,7 +332,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Technology"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorPrimaryDark"
 
                     android:textSize="18sp"
                     android:typeface="sans" />
@@ -331,39 +342,53 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Best Topic"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp"
                     android:typeface="sans" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/userDetailsTile"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/square_grey"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="6dp">
+                android:padding="15dp">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                <TextView
+                    android:id="@+id/tvMainEngagementResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:src="@drawable/person_black_24dp" />
+                    android:text="10"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:typeface="sans" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Add Name"
-                    android:textColor="@color/colorWhite"
+                    android:text="Engagments"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="12sp"
                     android:typeface="sans" />
             </LinearLayout>
 
 
         </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tagbg"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/tagLine"
+            android:textColor="@color/colorWhite" />
 
 
     </LinearLayout>
@@ -375,393 +400,414 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/exploreTopics"
-        tools:layout_editor_absoluteX="6dp">
+        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
 
-        <android.support.v7.widget.CardView
+
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical"
             android:padding="10dp"
-            android:paddingBottom="8dp">
+
+            >
+
+            <nl.dionsegijn.konfetti.KonfettiView
+                android:id="@+id/viewKonfetti"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+
+
+                >
+
+
+                <TextView
+                    android:id="@+id/tvTopic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Sport"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="20dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/question" />
+
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingTop="3dp">
+
 
                 <TextView
                     android:id="@+id/teaserQuizOneTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="3dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/colorWhite"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
                     android:text="@string/teaserQuizOneTv"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="15sp" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/teaserQuizOneTv1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="@string/teaserQuizOneTv1"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/teaserQuizOneTv2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="@string/teaserQuizOneTv2"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/teaserQuizOneTv3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="@string/teaserQuizOneTv3"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="8dp">
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
 
                 <TextView
-                    android:id="@+id/teaserQuizTwoTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="3dp"
-                    android:text="@string/quiz2"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="15sp" />
-
-                <LinearLayout
+                    android:id="@+id/teaserQuizOneTv1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_grey"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:minHeight="80dp"
+                    android:padding="2dp"
+                    android:text="He7"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
 
-                    <TextView
-                        android:id="@+id/teaserQuizTwoTv1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="Android"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/teaserQuizTwoTv2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="iOs"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
+                    android:transitionName="transition">
 
-                    <TextView
-                        android:id="@+id/teaserQuizTwoTv3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="Windows"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
+                </TextView>
 
-                </LinearLayout>
 
+                <TextView
+                    android:id="@+id/teaserQuizOneTv2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_grey"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:minHeight="80dp"
+                    android:padding="2dp"
+                    android:text="@string/teaserQuizOneTv2"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/teaserQuizOneTv3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/rounded_grey"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:minHeight="80dp"
+                    android:padding="2dp"
+                    android:text="@string/teaserQuizOneTv3"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-
-            android:layout_marginTop="10dp"
-            android:paddingBottom="8dp">
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_gravity="right"
+                android:background="@drawable/round_orange"
+                android:visibility="gone"
 
-                <TextView
-                    android:id="@+id/teaserQuizThreeTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="3dp"
-                    android:text="Rihana         Smash, Pass or Marry?"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="15sp" />
+                >
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                <Button
 
-                    <TextView
-                        android:id="@+id/teaserQuizThreeTv1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="Smash"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
+                    android:id="@+id/nextBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_navigate_next_black_24dp"
 
-                    <TextView
-                        android:id="@+id/teaserQuizThreeTv2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="Pass"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/teaserQuizThreeTv3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:background="@drawable/rounded_grey"
-                        android:gravity="center"
-                        android:minHeight="30dp"
-                        android:padding="6dp"
-                        android:text="Marry"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
+                    />
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/exploreTopics"
-        android:layout_width="wrap_content"
+        android:id="@+id/chooseGameType"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+
+            >
+
+
+            <TextView
+                android:id="@+id/gameTypeHot"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="0dp"
+                android:layout_weight="2"
+                android:background="@drawable/red_back"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Hot Ten"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:id="@+id/gameType30Sec"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="10 In 30 Sec"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"/>
+        </LinearLayout>
+
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/exploreTitle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            android:id="@+id/gameTypeClassic"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/choice"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Classic Random"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"/>
 
 
-        <HorizontalScrollView
-            android:id="@+id/horizontal_scroll_view"
+    </LinearLayout>
+
+
+    <HorizontalScrollView
+        android:id="@+id/exploreTopics"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fillViewport="true"
+        android:scrollbars="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/img_gallery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="5dp"
-            android:scrollbars="horizontal">
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/img_gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+
+                    android:src="@drawable/movie_black" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/movie_black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Movie" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/music_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Music" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/money_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Finance" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/camera_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Photography" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/cloud_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weather" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/local_bar" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Drinks" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/drive_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cars" />
-                </LinearLayout>
-
-
+                    android:text="Movie" />
             </LinearLayout>
-        </HorizontalScrollView>
-    </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/music_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/money_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Finance" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/camera_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Technology" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cloud_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sport" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/local_bar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/drive_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Science" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/drive_black_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brand" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
 
 
 </android.support.constraint.ConstraintLayout>

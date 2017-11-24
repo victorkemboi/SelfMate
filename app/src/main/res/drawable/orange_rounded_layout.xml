@@ -6,7 +6,7 @@
         <shape android:shape="rectangle"  >
             <corners android:radius="50dip" />
 
-            <solid android:color="@color/colorAccent"/>
+            <stroke android:width="5dp" android:color="@color/colorAccentLite"/>
         </shape>
     </item>
 </selector>

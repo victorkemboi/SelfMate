@@ -19,27 +19,36 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
+
 /**
  * Created by vicki_mes on 11/15/2017.
  */
 
+
 public class App extends Application {
 
-    private static final String DATABASE_NAME = "SelfMate";
-    public static App INSTANCE;
-    private SelfMateDatabase database;
+
+   public static App INSTANCE;
+   // private SelfMateDatabase database;
+
+
 
     public static App get() {
-        return INSTANCE;
+      return INSTANCE;
     }
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("starting app", "start");
+       // Log.d("starting app", "start");
         // create database
-        database = Room.databaseBuilder(getApplicationContext(), SelfMateDatabase.class, DATABASE_NAME)
+        /*database = Room.databaseBuilder(getApplicationContext(), SelfMateDatabase.class, DATABASE_NAME)
                 .addCallback(new RoomDatabase.Callback() {
 
                     @Override
@@ -99,13 +108,13 @@ public class App extends Application {
                     }
                 })
                 .build();
-
+   */
         INSTANCE = this;
     }
 
-    public SelfMateDatabase getDB() {
-        return database;
-    }
+   // public SelfMateDatabase getDB() {
+      //  return database;
+    //}
 
 
 }

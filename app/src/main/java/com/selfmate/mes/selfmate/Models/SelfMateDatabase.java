@@ -6,7 +6,7 @@ import android.arch.persistence.room.RoomDatabase;
 /**
  * Created by vicki_mes on 11/15/2017.
  */
-@Database(entities = {User.class, MoodLog.class, Question.class}, version = 1)
+@Database(entities = {User.class, MoodLog.class, Question.class,Results.class}, version = 1,exportSchema = false)
 public abstract class SelfMateDatabase extends RoomDatabase {
 
 
@@ -15,6 +15,7 @@ public abstract class SelfMateDatabase extends RoomDatabase {
     public abstract MoodLogDao moodLogDao();
 
     public abstract QuestionDao questionDao();
+    public abstract ResultsDao resultsDao();
 
 
 }

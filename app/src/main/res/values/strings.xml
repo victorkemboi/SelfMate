@@ -10,5 +10,11 @@
     <string name="teaserQuizOneTv1">Yes</string>
     <string name="teaserQuizOneTv2">No</string>
     <string name="teaserQuizOneTv3">Need One</string>
-    teaserQuizOneTv
+
+    <string name="tagLine">Welcome to the world of jokery.
+    The truth will always set you free. -Vicki Mes
+    </string>
+
+
+
 </resources>

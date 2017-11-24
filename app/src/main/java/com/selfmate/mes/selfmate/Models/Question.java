@@ -19,16 +19,16 @@ public class Question {
     private String question;
 
     @ColumnInfo(name = "topic")
-    private String topic;
+    private int topic;
 
     @ColumnInfo(name = "sub_topic")
     private String subTopic;
 
     @ColumnInfo(name = "mood_asked")
-    private String moodAsked;
+    private int moodAsked;
 
     @ColumnInfo(name = "mood_answered")
-    private String moodAnswered;
+    private int moodAnswered;
 
     @ColumnInfo(name = "option_1")
     private String option1;
@@ -39,31 +39,43 @@ public class Question {
     @ColumnInfo(name = "option_3")
     private String option3;
 
-    @ColumnInfo(name = "type")
-    private String type;
+    @ColumnInfo(name = "type_question")
+    private boolean type_question;
 
     @Ignore
+    @ColumnInfo(name = "image_name")
+    private String image_name;
+
     @ColumnInfo(name = "answer")
     private int answer;
 
-    @Ignore
-    @ColumnInfo(name = "user_answer")
-    private int userAnswer;
 
-    @Ignore
+    @ColumnInfo(name = "failed")
+    private boolean failed;
+
+
     @ColumnInfo(name = "views")
     private int views;
 
 
-    public Question(String question, String topic, String subTopic, String moodAsked, String option1, String option2, String option3, String type) {
+    @ColumnInfo(name = "answered")
+    private boolean answered;
+
+
+    public Question(String question, int topic, String subTopic, int moodAsked, int moodAnswered, String option1, String option2, String option3, boolean type_question, int answer, boolean failed, int views, boolean answered) {
         this.question = question;
         this.topic = topic;
         this.subTopic = subTopic;
         this.moodAsked = moodAsked;
+        this.moodAnswered = moodAnswered;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
-        this.type = type;
+        this.type_question = type_question;
+        this.answer = answer;
+        this.failed = failed;
+        this.views = views;
+        this.answered = answered;
     }
 
     public int getUid() {
@@ -82,11 +94,11 @@ public class Question {
         this.question = question;
     }
 
-    public String getTopic() {
+    public int getTopic() {
         return topic;
     }
 
-    public void setTopic(String topic) {
+    public void setTopic(int topic) {
         this.topic = topic;
     }
 
@@ -98,19 +110,19 @@ public class Question {
         this.subTopic = subTopic;
     }
 
-    public String getMoodAsked() {
+    public int getMoodAsked() {
         return moodAsked;
     }
 
-    public void setMoodAsked(String moodAsked) {
+    public void setMoodAsked(int moodAsked) {
         this.moodAsked = moodAsked;
     }
 
-    public String getMoodAnswered() {
+    public int getMoodAnswered() {
         return moodAnswered;
     }
 
-    public void setMoodAnswered(String moodAnswered) {
+    public void setMoodAnswered(int moodAnswered) {
         this.moodAnswered = moodAnswered;
     }
 
@@ -138,12 +150,20 @@ public class Question {
         this.option3 = option3;
     }
 
-    public String getType() {
-        return type;
+    public boolean isType_question() {
+        return type_question;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType_question(boolean type_question) {
+        this.type_question = type_question;
+    }
+
+    public String getImage_name() {
+        return image_name;
+    }
+
+    public void setImage_name(String image_name) {
+        this.image_name = image_name;
     }
 
     public int getAnswer() {
@@ -154,6 +174,14 @@ public class Question {
         this.answer = answer;
     }
 
+    public boolean isFailed() {
+        return failed;
+    }
+
+    public void setFailed(boolean failed) {
+        this.failed = failed;
+    }
+
     public int getViews() {
         return views;
     }
@@ -162,11 +190,11 @@ public class Question {
         this.views = views;
     }
 
-    public int getUserAnswer() {
-        return userAnswer;
+    public boolean getAnswered() {
+        return answered;
     }
 
-    public void setUserAnswer(int userAnswer) {
-        this.userAnswer = userAnswer;
+    public void setAnswered(boolean answered) {
+        this.answered = answered;
     }
 }

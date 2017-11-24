@@ -16,10 +16,10 @@ import java.util.List;
 public interface MoodLogDao {
 
     @Insert
-    void insertMoodToLog(MoodLog moodLog);
+    long insertMoodToLog(MoodLog moodLog);
 
     @Update
-    void updateMoodToLog(MoodLog moodLog);
+    int updateMoodToLog(MoodLog moodLog);
 
     @Query("Select * from moodlog")
     List<MoodLog> getMoogLog();

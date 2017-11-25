@@ -1,4 +1,4 @@
-package com.selfmate.mes.selfmate.Models;
+package com.selfmate.mes.selfmate.models;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;

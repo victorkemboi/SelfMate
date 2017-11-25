@@ -2,11 +2,10 @@ package com.selfmate.mes.selfmate.ui.repo;
 
 import android.arch.lifecycle.LiveData;
 
-import com.selfmate.mes.selfmate.Models.Question;
-import com.selfmate.mes.selfmate.Models.QuestionDao;
+import com.selfmate.mes.selfmate.models.Question;
+import com.selfmate.mes.selfmate.models.QuestionDao;
 
 import java.util.List;
-import java.util.Stack;
 
 import javax.inject.Inject;
 

@@ -1,4 +1,4 @@
-package com.selfmate.mes.selfmate.Models;
+package com.selfmate.mes.selfmate.models;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -62,5 +62,8 @@ public class User {
         this.gender = gender;
     }
 }
+
+
+
 
 

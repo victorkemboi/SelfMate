@@ -2,10 +2,9 @@ package com.selfmate.mes.selfmate.ui.repo;
 
 import android.arch.lifecycle.LiveData;
 
-import com.selfmate.mes.selfmate.Models.Question;
+import com.selfmate.mes.selfmate.models.Question;
 
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by vicki_mes on 11/18/2017.

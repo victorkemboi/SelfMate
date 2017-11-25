@@ -1,9 +1,8 @@
 package com.selfmate.mes.selfmate.ui.repo;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 
-import com.selfmate.mes.selfmate.Models.Results;
+import com.selfmate.mes.selfmate.models.Results;
 
 /**
  * Created by vicki_mes on 11/20/2017.

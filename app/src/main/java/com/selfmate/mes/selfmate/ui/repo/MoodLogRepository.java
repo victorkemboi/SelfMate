@@ -2,7 +2,7 @@ package com.selfmate.mes.selfmate.ui.repo;
 
 import android.arch.lifecycle.LiveData;
 
-import com.selfmate.mes.selfmate.Models.MoodLog;
+import com.selfmate.mes.selfmate.models.MoodLog;
 
 import java.util.List;
 

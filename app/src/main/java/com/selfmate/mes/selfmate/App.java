@@ -1,29 +1,6 @@
 package com.selfmate.mes.selfmate;
 
 import android.app.Application;
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.NonNull;
-import android.util.Log;
-
-import com.opencsv.CSVReader;
-import com.selfmate.mes.selfmate.Models.Question;
-import com.selfmate.mes.selfmate.Models.QuestionDao;
-import com.selfmate.mes.selfmate.Models.SelfMateDatabase;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
-import dagger.Module;
-import dagger.Provides;
 
 /**
  * Created by vicki_mes on 11/15/2017.

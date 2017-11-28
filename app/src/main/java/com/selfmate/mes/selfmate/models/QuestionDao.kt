@@ -13,7 +13,7 @@ interface QuestionDao {
     @get:Query("Select * from question")
     val questions: LiveData<List<Question>>
 
-    @get:Query("Select * from question WHERE  topic=8 AND answered='0' LIMIT  10")
+    @get:Query("Select * from question WHERE  topic=8 ")
     val hotQuestions: LiveData<List<Question>>
 
     @get:Query("SELECT * FROM question where answered='0' AND topic<>8 ORDER BY RANDOM() LIMIT  1 ")

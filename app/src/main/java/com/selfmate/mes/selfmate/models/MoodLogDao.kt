@@ -15,7 +15,7 @@ import android.arch.persistence.room.Update
 interface MoodLogDao {
 
     @get:Query("Select * from moodlog")
-    val moogLog: List<MoodLog>
+    val moogLog: LiveData<List<MoodLog>>
 
     @Insert
     fun insertMoodToLog(moodLog: MoodLog): Long

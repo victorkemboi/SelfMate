@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="@color/colorYellow"
     android:backgroundTintMode="screen"
     android:focusable="true"
-    android:focusableInTouchMode="true"
 
-    android:animateLayoutChanges="true">
+    android:focusableInTouchMode="true">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -240,7 +239,7 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
@@ -394,177 +393,7 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/teaserLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
 
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:orientation="vertical"
-            android:padding="10dp"
-
-            >
-
-            <nl.dionsegijn.konfetti.KonfettiView
-                android:id="@+id/viewKonfetti"
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="20dp"
-                android:orientation="horizontal"
-
-
-                >
-
-
-                <TextView
-                    android:id="@+id/tvTopic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="5dp"
-                    android:fontFamily="serif"
-                    android:gravity="center"
-                    android:text="Sport"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="20dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/question" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingStart="10dp"
-                android:paddingTop="3dp">
-
-
-                <TextView
-                    android:id="@+id/teaserQuizOneTv"
-                    android:layout_width="fill_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/colorWhite"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:gravity="center"
-                    android:paddingStart="5dp"
-                    android:text="@string/teaserQuizOneTv"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <TextView
-                    android:id="@+id/teaserQuizOneTv1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="2dp"
-                    android:layout_weight="2"
-                    android:background="@drawable/rounded_grey"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:minHeight="80dp"
-                    android:padding="2dp"
-                    android:text="He7"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp"
-
-
-                    android:transitionName="transition">
-
-                </TextView>
-
-
-                <TextView
-                    android:id="@+id/teaserQuizOneTv2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="2dp"
-                    android:layout_weight="2"
-                    android:background="@drawable/rounded_grey"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:minHeight="80dp"
-                    android:padding="2dp"
-                    android:text="@string/teaserQuizOneTv2"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/teaserQuizOneTv3"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:background="@drawable/rounded_grey"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:gravity="center"
-                    android:minHeight="80dp"
-                    android:padding="2dp"
-                    android:text="@string/teaserQuizOneTv3"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@drawable/round_orange"
-                android:visibility="gone"
-
-                >
-
-                <Button
-
-                    android:id="@+id/nextBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_navigate_next_black_24dp"
-
-
-                    />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/chooseGameType"
@@ -595,15 +424,15 @@
                 android:layout_marginStart="0dp"
                 android:layout_weight="2"
                 android:background="@drawable/red_back"
+                android:clickable="true"
+                android:focusable="true"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="Hot Ten"
                 android:textColor="@color/colorWhite"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace"
-                android:clickable="true"
-                android:focusable="true"/>
+                android:typeface="monospace" />
 
             <TextView
                 android:id="@+id/gameType30Sec"
@@ -611,14 +440,14 @@
                 android:layout_height="80dp"
                 android:layout_weight="2"
                 android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:focusable="true"
                 android:fontFamily="serif"
                 android:gravity="center"
                 android:text="10 In 30 Sec"
                 android:textColor="@color/colorWhite"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:clickable="true"
-                android:focusable="true"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
 
@@ -628,15 +457,15 @@
             android:layout_height="80dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/choice"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="serif"
             android:gravity="center"
             android:text="Classic Random"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:clickable="true"
-            android:focusable="true"/>
+            android:textStyle="bold" />
 
 
     </LinearLayout>

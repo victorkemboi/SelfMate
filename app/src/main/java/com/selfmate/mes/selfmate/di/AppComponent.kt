@@ -3,6 +3,7 @@ package com.selfmate.mes.selfmate.di
 import android.app.Application
 import com.selfmate.mes.selfmate.models.SelfMateDatabase
 import com.selfmate.mes.selfmate.ui.Home
+import com.selfmate.mes.selfmate.ui.QuizActivity
 import com.selfmate.mes.selfmate.ui.repo.MateViewModel
 import com.selfmate.mes.selfmate.ui.repo.MoodLogRepository
 import com.selfmate.mes.selfmate.ui.repo.QuestionRepository
@@ -18,7 +19,7 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(mainActivity: Home)
-
+    fun inject(quizActivity: QuizActivity)
     // QuestionDao questionDao();
 
     fun selfMateDatabase(): SelfMateDatabase

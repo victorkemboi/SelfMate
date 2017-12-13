@@ -12,6 +12,8 @@ interface ResultsRepository {
 
     val results: LiveData<Results>
 
+    val liveResults: Results
+
 
     fun insert(results: Results): Long
 

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorYellow"
+
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.selfmate.mes.selfmate.ui.HotGameActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/hotGameToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/hotGameToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="casual"
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:typeface="monospace" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/teaserLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/hotGameToolbar">
+
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/hotGameViewKonfetti"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+
+
+            >
+
+
+            <TextView
+                android:id="@+id/hotGameTvTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginStart="5dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Sport"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/question" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="3dp">
+
+
+            <TextView
+                android:id="@+id/hotGameTeaserQuizOneTv"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:background="@color/colorWhite"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:text="@string/teaserQuizOneTv"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/hotGameTeaserQuizOneTv1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="Yes"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+
+
+                android:transitionName="transition">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/hotGameTeaserQuizOneTv2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="@string/teaserQuizOneTv2"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/hotGameTeaserQuizOneTv3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="@string/teaserQuizOneTv3"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

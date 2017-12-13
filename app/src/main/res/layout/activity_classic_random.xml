@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.selfmate.mes.selfmate.ui.ClassicRandomActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/classicRandomToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@drawable/gradient_back"
+        android:minHeight="?attr/actionBarSize"
+        android:titleTextColor="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/classicRandomToolbar_ic"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_play_arrow" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif"
+            android:padding="5dp"
+            android:text="PLAY"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="9dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/classicRandomTeaserLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/classicRandomToolbar">
+
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/classicRandomViewKonfetti"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+
+
+            >
+
+
+            <TextView
+                android:id="@+id/classicRandomTvTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginStart="5dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Sport"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginStart="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/question" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="3dp">
+
+
+            <TextView
+                android:id="@+id/classicRandomTeaserQuizOneTv"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/teaserQuizOneTv"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="50dp"
+                android:src="@drawable/ic_thumb_up_off" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="50dp"
+                android:src="@drawable/ic_thumb_down_off" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/classicRandomAnswersLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/classicRandomTeaserQuizOneTv1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="Yes"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+
+
+                android:transitionName="transition">
+
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/classicRandomTeaserQuizOneTv2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="@string/teaserQuizOneTv2"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/classicRandomTeaserQuizOneTv3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@drawable/rounded_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:padding="2dp"
+                android:text="@string/teaserQuizOneTv3"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/classicRandomResultsFeedBack"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="80dp"
+            android:padding="2dp"
+            android:text="Yes"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+
+
+            android:transitionName="transition"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

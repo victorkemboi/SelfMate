@@ -13,6 +13,9 @@ import javax.inject.Inject
 
 class QuestionDataSource @Inject
 constructor(private val questionDao: QuestionDao) : QuestionRepository {
+    override fun update(question: Question) {
+        questionDao.updateQuestion(question)
+    }
 
     override val random: LiveData<Question>
         get() = questionDao.randomQuestion

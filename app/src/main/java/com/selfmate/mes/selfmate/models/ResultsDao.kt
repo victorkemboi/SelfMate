@@ -13,6 +13,9 @@ interface ResultsDao {
     @Query("SELECT * FROM results WHERE uid=1")
     fun getResults(): LiveData<Results>
 
+    @Query("SELECT * FROM results WHERE uid=1")
+    fun getLiveResults(): Results
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertResults(results: Results): Long

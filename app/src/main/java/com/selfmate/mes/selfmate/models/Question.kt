@@ -6,10 +6,11 @@ import android.arch.persistence.room.PrimaryKey
 
 /**
  * Created by vicki_mes on 11/16/2017.
+ *
  */
 
 @Entity(tableName = "question")
-class Question(
+data class Question(
         @ColumnInfo(name = "question")
         var question: String = "",
 
@@ -34,8 +35,8 @@ class Question(
         @ColumnInfo(name = "option_3")
         var option3: String = "",
 
-        @ColumnInfo(name = "type_question")
-        var isType_question: Boolean = false,
+        @ColumnInfo(name = "closed_question")
+        var isClosedQuestion: Boolean = false,
 
         @ColumnInfo(name = "answer")
         var answer: Int = 0,
@@ -47,10 +48,9 @@ class Question(
         var views: Int = 0,
 
         @ColumnInfo(name = "answered")
-        var answered: Boolean = false) {
+        var answered: Boolean = false,
 
-    @PrimaryKey(autoGenerate = true)
-    var uid: Long? = null
+        @PrimaryKey(autoGenerate = true)
+        var uid: Long? = null
+)
 
-
-}

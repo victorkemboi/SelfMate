@@ -16,9 +16,10 @@ interface QuestionDao {
     @get:Query("Select * from question WHERE  topic=8 ")
     val hotQuestions: LiveData<List<Question>>
 
-    @get:Query("SELECT * FROM question where answered='0' AND topic<>8 ORDER BY RANDOM() LIMIT  1 ")
+    @get:Query("SELECT * FROM question WHERE answered='0'  ORDER BY RANDOM() LIMIT  1")
     val randomQuestion: LiveData<Question>
 
+    //topic<>8
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertQuestion(question: Question): Long
 

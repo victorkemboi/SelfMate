@@ -13,7 +13,7 @@ import java.util.*
 
 @Entity(tableName = "results")
 @TypeConverters(DateTypeConverter::class)
-class Results(
+data class Results(
         @ColumnInfo(name = "timeCreated")
         var timeCreated: Date = Date(),
 

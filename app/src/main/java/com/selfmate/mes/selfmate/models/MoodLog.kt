@@ -17,13 +17,12 @@ data class MoodLog(
 
 
         @ColumnInfo(name = "time")
-        var time: Date = Date(),
+        var time: Date,
 
         @ColumnInfo(name = "mood")
-        var mood: Int = 0
+        var mood: Int,
 
+        @PrimaryKey(autoGenerate = true)
+        var uid: Long? = null
 
-) {
-    @PrimaryKey(autoGenerate = true)
-    var uid: Long? = null
-}
+)

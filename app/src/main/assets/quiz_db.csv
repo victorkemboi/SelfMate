@@ -1,20 +1,19 @@
-Which would you spend most of your time on?,8,Youtube,Facebook,Twitter,FALSE,0
-If animals could talk which would be the rudest?,6,Spider,Horse,Monkey,FALSE,0
-Is a hotdog a sandwich?,4,Yes,No,Don't Know,TRUE,2
-Is cereal soup?,4,Yes,No,Don't Know,TRUE,2
-What would you name your boat if you had one?,8,The Unsinkable 3,The Cowboy Bebop,The Please dont Sink,FALSE,0
-what would you like?,8,motor yacht,a sailboat,dinghy,FALSE,0
-What celebrity would you rate as a perfect 10?,8,Rihanna,Beyonce Knowles,Selena Gomez,FALSE,0
-Which fictional character would be the most boring to meet in real life?,8,Spiderman,Superman,Batman,FALSE,0
-What is the national animal of Canada?,6,beaver,whale,bat,TRUE,1
-Which actress has won the most Oscars? ,1,Katharine Hepburn,Meryl Streep,Ingrid Bergman,TRUE,1
-What is the oldest film ever made,1,Traffic Crossing Leeds Bridge,Accordion Player,Roundhay Garden Scene,TRUE,3
-Who played Neo in The Matrix?,1,Chris Hemsworth,Keanu Reeves,Idris Elba,TRUE,2
-The Wolf of Wall Street movie is based on the true story of which former American stock broker?,1,Jordan Belfort,Jamie Dimon,Henry Paulson,TRUE,1
-What type of fish is Dory from the 2003 movie 'Finding Nemo'?,1,Bluefish,Blue Tang,Blowfish,TRUE,2
-The 33 movie is based on a true story about 33 men trapped in an underground mine in which country?,1,Colombia,Mexico,Chile,TRUE,3
-Which 2016 movie is based on a Roman soldier's search for Jesus' missing body following his resurrection?,1,Risen,The Last Temptation of Christ,Jesus of Nazareth,TRUE,1
-What was the first fully animated feature film released by Walt Disney?,1,Pinocchio ,The Three Caballeros,Snow White and the Seven Dwarfs,TRUE,3
-True of false: From Russia with Love was the first James Bond film?,1,TRUE,MAYBE,FALSE,TRUE,3
-What nationality is Liam Neeson?,1,American,English,Northern Irish,TRUE,3
-In which movie does Jim Carey unknowingly star as the main character in his own reality television show?,1,Quiz Show,The Truman Show,The Late Show,TRUE,2
+Which would you spend most of your time on?,8,Youtube,Facebook,Twitter,false,0
+If animals could talk which would be the rudest?,6,Spider,Horse,Monkey,false,0
+Is a hotdog a sandwich?,4,Yes,No,Don't Know,true,2
+Is cereal soup?,4,Yes,No,Don't Know,true,2
+What would you name your boat if you had one?,8,The Unsinkable 3,The Cowboy Bebop,The Please dont Sink,false,0
+what would you like?,8,motor yacht,a sailboat,dinghy,false,0
+What celebrity would you rate as a perfect 10?,8,Rihanna,Beyonce Knowles,Selena Gomez,false,0
+Which fictional character would be the most boring to meet in real life?,8,Spiderman,Superman,Batman,false,0
+What is the national animal of Canada?,6,beaver,whale,bat,true,1
+Which actress has won the most Oscars? ,4,Katharine Hepburn,Meryl Streep,Ingrid Bergman,true,1
+What is the oldest film ever made,4,Traffic Crossing Leeds Bridge,Accordion Player,Roundhay Garden Scene,true,3
+Who played Neo in The Matrix?,4,Chris Hemsworth,Keanu Reeves,Idris Elba,true,2
+The Wolf of Wall Street movie is based on the true story of which former American stock broker?,1,Jordan Belfort,Jamie Dimon,Henry Paulson,true,2
+What type of fish is Dory from the 2003 movie 'Finding Nemo'?,4,Bluefish,Blue Tang,Blowfish,true,2
+The 33 movie is based on a true story about 33 men trapped in an underground mine in which country?,4,Colombia,Mexico,Chile,true,3
+What was the first fully animated feature film released by Walt Disney?,4,Pinocchio ,The Three Caballeros,Snow White and the Seven Dwarfs,true,3
+True of false: From Russia with Love was the first James Bond film?,4,TRUE,MAYBE,FALSE,true,3
+What nationality is Liam Neeson?,4,American,English,Northern Irish,true,3
+In which movie does Jim Carey unknowingly star as the main character in his own reality television show?,4,Quiz Show,The Truman Show,The Late Show,true,2

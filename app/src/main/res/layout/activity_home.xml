@@ -1,236 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/colorYellow"
     android:backgroundTintMode="screen"
     android:focusable="true"
-
     android:focusableInTouchMode="true">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
+        android:background="@drawable/gradient_back"
         android:minHeight="?attr/actionBarSize"
         android:titleTextColor="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/toolbar_ic"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_home" />
 
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="casual"
+            android:fontFamily="sans-serif"
             android:padding="5dp"
-            android:text="@string/app_name"
-            android:textColor="@android:color/black"
+            android:text="HOME"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
             android:textSize="18sp"
-            android:textStyle="bold|italic"
-            android:typeface="monospace" />
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="9dp" />
     </android.support.v7.widget.Toolbar>
 
-
-    <LinearLayout
-        android:id="@+id/introMoodLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="visible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/tvHowFeelingTitle"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="13sp"
-            android:typeface="sans" />
-
-        <android.support.v7.widget.ButtonBarLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
-
-            <ImageButton
-                android:id="@+id/laugh_emoji"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="2dp"
-                android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/laugh_emoji" />
-
-            <ImageButton
-                android:id="@+id/happy_emoji"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="4dp"
-                android:background="@color/colorWhite"
-                android:padding="2dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/happy_emoji" />
-
-            <ImageButton
-                android:id="@+id/sad_emoji"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="4dp"
-                android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sad_emoji" />
-
-            <ImageButton
-                android:id="@+id/angry_emoji"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginStart="4dp"
-                android:background="@color/colorWhite"
-                android:padding="4dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/angry_emoji" />
-        </android.support.v7.widget.ButtonBarLayout>
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/userFeelingLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/introMoodLayout">
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingStart="10dp">
-
-            <ImageView
-                android:id="@+id/imgFeeling"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/angry_emoji" />
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <LinearLayout
-                    android:id="@+id/introMoodLayoutResults"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="8dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvBarEngagementResults"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="10"
-
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="18sp"
-                            android:typeface="sans" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Engagments"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp"
-                            android:typeface="sans" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvBarRxpointsResults"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="200"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="18sp"
-                            android:typeface="sans" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="RX Points"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="12sp"
-                            android:typeface="sans" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/userProfileLayout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:background="@drawable/orange_rounded_layout"
-                    android:padding="5dp">
-
-
-                    <ImageView
-                        android:id="@+id/userProfile"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
-
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/chart_black" />
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/userResultsMainLayout"
@@ -242,401 +50,294 @@
         android:visibility="visible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_marginTop="20dp"
+
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="130dp"
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/square_grey"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Happy"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:typeface="sans" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Mostly"
-                    android:textColor="@color/colorPrimaryDark"
-
-                    android:textSize="12sp"
-                    android:typeface="sans" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:background="@drawable/square_grey"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:id="@+id/tvMainRxpointsResults"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="250"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:typeface="sans" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="RX Points"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp"
-                    android:typeface="sans" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/square_grey"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Technology"
-                    android:textColor="@color/colorPrimaryDark"
-
-                    android:textSize="18sp"
-                    android:typeface="sans" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Best Topic"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp"
-                    android:typeface="sans" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/square_grey"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:id="@+id/tvMainEngagementResults"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="10"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:typeface="sans" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Engagments"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="12sp"
-                    android:typeface="sans" />
-            </LinearLayout>
-
+                android:text="Score"
+                android:textAllCaps="false"
+                android:textColor="@color/colorGradientB"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvMainRxpointsResults"
+            android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/tagbg"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/score_back"
+            android:elegantTextHeight="true"
+            android:elevation="5dp"
             android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/tagLine"
-            android:textColor="@color/colorWhite" />
+            android:text="250"
+            android:textColor="@color/colorGradientA"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:translationZ="2dp"
+            android:typeface="sans" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:gravity="center"
+                android:text="Level:"
+                android:textColor="@color/colorGradientB"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Starter"
+                android:textColor="@color/colorGradientA"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/introMoodLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/tvHowFeelingTitle"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+        <android.support.v7.widget.ButtonBarLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/menu_selection"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageButton
+                android:id="@+id/laugh_emoji"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="2dp"
+                android:background="@color/colorBlue"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/laugh_emoji" />
+
+            <ImageButton
+                android:id="@+id/happy_emoji"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorBlue"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/happy_emoji" />
+
+            <ImageButton
+                android:id="@+id/sad_emoji"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorBlue"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sad_emoji" />
+
+            <ImageButton
+                android:id="@+id/angry_emoji"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/colorBlue"
+                android:padding="4dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angry_emoji" />
+        </android.support.v7.widget.ButtonBarLayout>
+
+
+    </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/chooseGameType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/userFeelingLayout">
+        app:layout_constraintTop_toBottomOf="@id/userResultsMainLayout">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imgFeeling"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/angry_emoji" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/gameTypeClassic"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/play_back"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:translationZ="5dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_play_circle24dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Play"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gameTypeAsk"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/menu_ask"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:translationZ="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_chat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Post"
+                android:textAlignment="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="58dp"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="horizontal">
 
-            >
-
-
-            <TextView
-                android:id="@+id/gameTypeHot"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="0dp"
-                android:layout_weight="2"
-                android:background="@drawable/red_back"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="sans-serif"
-                android:gravity="center"
-                android:text="Hot Ten"
-                android:textColor="@color/colorWhite"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
-
-            <TextView
-                android:id="@+id/gameType30Sec"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_weight="2"
-                android:background="@drawable/rounded_grey"
+            <Button
+                android:id="@+id/gameTypeBack"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="45dp"
+                android:layout_marginStart="40dp"
+                android:background="@drawable/ic_arrow_back_"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:text="10 In 30 Sec"
+                android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
+
         </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/gameTypeClassic"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/choice"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:text="Classic Random"
-            android:textAlignment="center"
-            android:textColor="@color/colorWhite"
-            android:textSize="16sp"
-            android:textStyle="bold" />
 
 
     </LinearLayout>
-
-
-    <HorizontalScrollView
-        android:id="@+id/exploreTopics"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fillViewport="true"
-        android:scrollbars="horizontal"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <LinearLayout
-            android:id="@+id/img_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-
-                    android:src="@drawable/movie_black" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Movie" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/music_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Music" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/money_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Finance" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/camera_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Technology" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/cloud_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sport" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/local_bar" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Food" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/drive_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Science" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/drive_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Brand" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
 
 
 </android.support.constraint.ConstraintLayout>

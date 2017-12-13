@@ -8,17 +8,14 @@ import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import com.opencsv.CSVReader
-import com.selfmate.mes.selfmate.models.MoodLogDao
-import com.selfmate.mes.selfmate.models.QuestionDao
-import com.selfmate.mes.selfmate.models.ResultsDao
 import com.selfmate.mes.selfmate.models.SelfMateDatabase
-import com.selfmate.mes.selfmate.ui.repo.*
 import dagger.Module
 import dagger.Provides
 import java.io.IOException
 import java.io.InputStreamReader
 import java.util.*
 import javax.inject.Singleton
+
 
 /**
  * Created by vicki_mes on 11/18/2017.
@@ -45,7 +42,7 @@ class RoomModule(mApplication: Application) {
                         results.put("engagement", 0)
                         results.put("rxpoints", 0)
 
-                        Log.d("results", results.toString())
+                        // Log.d("results", results.toString())
 
                         db.insert("results", SQLiteDatabase.CONFLICT_REPLACE, results)
 
@@ -81,7 +78,7 @@ class RoomModule(mApplication: Application) {
                                     contentValues.put("option_1", option1)
                                     contentValues.put("option_2", option2)
                                     contentValues.put("option_3", option3)
-                                    contentValues.put("type_question", typeQuestion)
+                                    contentValues.put("closed_question", typeQuestion)
                                     contentValues.put("answer", answer)
                                     contentValues.put("failed", failed)
                                     contentValues.put("views", views)
@@ -89,13 +86,13 @@ class RoomModule(mApplication: Application) {
 
                                     Log.d("results", contentValues.toString())
 
-                                    db.insert("question", SQLiteDatabase.CONFLICT_REPLACE, contentValues)
+                                    db.insert("question", SQLiteDatabase.CONFLICT_IGNORE, contentValues)
 
 
                                 }
 
 
-                            } catch (e: IOException) {
+                            } catch (e: IllegalStateException) {
                                 e.printStackTrace()
                             }
 
@@ -114,56 +111,6 @@ class RoomModule(mApplication: Application) {
     @Provides
     internal fun providesRoomDatabase(): SelfMateDatabase = selfMateDatabase
 
-    @Singleton
-    @Provides
-    internal fun providesQuestionDao(selfMateDatabasem: SelfMateDatabase): QuestionDao =
-            selfMateDatabasem.questionDao()
-
-    @Singleton
-    @Provides
-    internal fun providesResultsDao(selfMateDatabasem: SelfMateDatabase): ResultsDao {
-        return selfMateDatabasem.resultsDao()
-    }
-
-
-    @Singleton
-    @Provides
-    internal fun providesMoodLodDao(selfMateDatabasem: SelfMateDatabase): MoodLogDao {
-        return selfMateDatabasem.moodLogDao()
-    }
-
-    @Singleton
-    @Provides
-    internal fun questionRepository(questionDao: QuestionDao): QuestionRepository =
-            QuestionDataSource(questionDao)
-
-    @Singleton
-    @Provides
-    internal fun moodLogRepository(moodLogDao: MoodLogDao): MoodLogRepository =
-            MoodLogDataSource(moodLogDao)
-
-
-    @Singleton
-    @Provides
-    internal fun resultsRepository(resultsDao: ResultsDao): ResultsRepository =
-            ResultsDataSource(resultsDao)
-
-    @Singleton
-    @Provides
-    internal fun providesViewModel(questionRepo: QuestionRepository, moodLogRepository: MoodLogRepository, resultsRepository: ResultsRepository): MateViewModel =
-            MateViewModel(questionRepo, moodLogRepository, resultsRepository)
-
-    /*
-    @Singleton
-    @Provides
-    internal fun providesExecutor(): Thread {
-
-        val  thread : Thread = Thread()
-
-        return { thread }
-    }
-
-    */
 
     companion object {
         private val DATABASE_NAME = "SelfMate"

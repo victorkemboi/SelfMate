@@ -13,6 +13,8 @@ import javax.inject.Inject
 
 class ResultsDataSource @Inject
 constructor(private val resultsDao: ResultsDao) : ResultsRepository {
+    override val liveResults: Results
+        get() = resultsDao.getLiveResults()
 
     override val results: LiveData<Results>
         get() = resultsDao.getResults()

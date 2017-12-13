@@ -11,4 +11,6 @@
     <color name="colorGreen">#04df4d</color>
     <color name="colorMegenta">#ff007b</color>
     <color name="colorBlue">#039BE5</color>
+    <color name="colorGradientA">#9b0493</color>
+    <color name="colorGradientB">#38068f</color>
 </resources>

@@ -22,5 +22,8 @@ interface QuestionRepository {
 
     fun delete(question: Question): Int
 
+    fun update(question: Question)
+
+
 
 }

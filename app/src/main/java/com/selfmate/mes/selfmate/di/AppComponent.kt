@@ -6,7 +6,6 @@ import com.selfmate.mes.selfmate.models.SelfMateDatabase
 import com.selfmate.mes.selfmate.ui.AskQuizActivity
 import com.selfmate.mes.selfmate.ui.ClassicRandomActivity
 import com.selfmate.mes.selfmate.ui.Home
-import com.selfmate.mes.selfmate.ui.HotGameActivity
 import com.selfmate.mes.selfmate.ui.repo.*
 import dagger.Component
 import javax.inject.Singleton
@@ -24,8 +23,6 @@ interface AppComponent {
 
     fun inject(classicRandomActivity: ClassicRandomActivity)
 
-    fun inject(hotGameActivity: HotGameActivity)
-
     fun inject(askQuizActivity: AskQuizActivity)
 
     fun fireStore(): FirebaseFirestore
@@ -41,8 +38,6 @@ interface AppComponent {
     fun homeViewModel(): HomeViewModel
 
     fun classicRandomViewModel(): ClassicRandomViewModel
-
-    fun hotGameViewModel(): HotGameViewModel
 
     fun application(): Application
 

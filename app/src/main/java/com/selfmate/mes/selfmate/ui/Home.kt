@@ -257,11 +257,6 @@ class Home : AppCompatActivity() {
     }
 
     private fun moodAndFeelingLayoutSwitch() {
-        //introMoodLayout.visibility = View.GONE
-        //userResultsMainLayout.visibility = View.GONE
-        //introMoodLayoutResults.visibility = View.VISIBLE
-        //userFeelingLayout.visibility = View.VISIBLE
-        // chooseGameType.visibility = View.VISIBLE
 
         val handler = Handler()
         handler.postDelayed({

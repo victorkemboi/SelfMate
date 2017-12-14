@@ -25,14 +25,20 @@ constructor(private val questionRepo: QuestionRepository, private val resultsRep
     var questionsRef = db.collection("questions")
 
 
-    var query = questionsRef.whereEqualTo("answered", false).whereLessThan("topic", 8).limit(50)
+    var query = questionsRef.whereEqualTo("answered", false).limit(1).get()
 
 
-    var results: LiveData<Results> = resultsRepository.results
+    lateinit var results: LiveData<Results>
 
     lateinit var randomQuestionLiveData: LiveData<Question>
 
 
+    fun setResultsLiveData() {
+
+
+        results = resultsRepository.results
+
+    }
     fun initQuestionOne(question: Question) {
 
         questionOne.postValue(question)

@@ -52,6 +52,7 @@ constructor(private val questionRepo: QuestionRepository, firebaseFirestore: Fir
         askedQuiz = Question(question, topic, subTopic, moodAsked, moodAnswered, option1, option2,
                 option3, isClosedQuestion, answer, isFailed, views, answered)
 
+
         var boolean = false
 
         db.collection("questions")

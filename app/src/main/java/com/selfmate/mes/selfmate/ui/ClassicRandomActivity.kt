@@ -39,6 +39,12 @@ class ClassicRandomActivity : AppCompatActivity() {
 
         nextClassicQuestion()
 
+        viewModel.setResultsLiveData()
+
+        viewModel.query.addOnCompleteListener { result ->
+            Log.d("Snapshot", result.result.documents[0].id)
+        }
+
 
 
 
@@ -53,9 +59,9 @@ class ClassicRandomActivity : AppCompatActivity() {
         if (viewModel.questionOne.value!!.isClosedQuestion) {
 
             if (checkResult(textView)) {
-                success()
+                success(textView)
             } else {
-                failed(textView)
+                failed()
             }
         } else {
 
@@ -71,9 +77,6 @@ class ClassicRandomActivity : AppCompatActivity() {
 
         val ans = test!!.answer
 
-        Log.d("Ans", ans.toString())
-
-        Log.d("Ans tex", textView.text.toString())
 
         when (ans) {
             1 -> return test.option1 === textView.text.toString()
@@ -84,8 +87,13 @@ class ClassicRandomActivity : AppCompatActivity() {
         return false
     }
 
-    private fun failed(textView: TextView) {
+    private fun failed() {
 
+        classicRandomAnswersLayout.visibility = View.GONE
+        classicRandomResultsFeedBack.visibility = View.VISIBLE
+        correctAnswerTv.visibility = View.VISIBLE
+        classicRandomResultsAnswer.visibility = View.VISIBLE
+        nextBtn.visibility = View.VISIBLE
 
         viewModel.results.observe(this, Observer<Results> { result ->
             if (result != null) {
@@ -98,11 +106,22 @@ class ClassicRandomActivity : AppCompatActivity() {
             }
         })
 
-        textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.red_back)
+        // classicRandomResultsFeedBack.background = ContextCompat.getDrawable(applicationContext, R.drawable.red_back)
 
-        textView.text = "Wrong !"
+        classicRandomResultsFeedBack.text = "Wrong !"
+        classicRandomResultsFeedBack.setTextColor(Color.RED)
 
-        // viewModel.initQuestionOne();
+        val quiz = viewModel.questionOne.value
+        val ans = quiz?.answer
+        val displayAns = when (ans) {
+            1 -> quiz.option1
+            2 -> quiz.option2
+            3 -> quiz.option3
+            else -> {
+                "Failed"
+            }
+        }
+        classicRandomResultsAnswer.text = displayAns
 
         classicRandomViewKonfetti!!.build()
                 .addColors(Color.BLACK, Color.RED)
@@ -113,17 +132,23 @@ class ClassicRandomActivity : AppCompatActivity() {
                 .addShapes(Shape.RECT, Shape.CIRCLE)
                 .addSizes(Size(5, 5f))
                 .setPosition(-50f, classicRandomViewKonfetti!!.width + 50f, -50f, -50f)
-                .stream(300, 300L)
+                .stream(1000, 300L)
 
 
-        val handler = Handler()
-        handler.postDelayed({
+        if (quiz != null) {
+            quiz.answered = true
+            quiz.isFailed = true
+            viewModel.updateQuestionInfo(quiz)
 
-            textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.rounded_grey)
+
+        }
+
+
+        nextBtn.setOnClickListener {
             nextClassicQuestion()
+        }
 
 
-        }, 500)
 
 
     }
@@ -145,6 +170,7 @@ class ClassicRandomActivity : AppCompatActivity() {
         })
 
         textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.choice)
+        textView.setTextColor(Color.WHITE)
 
 
         classicRandomViewKonfetti!!.build()
@@ -156,25 +182,29 @@ class ClassicRandomActivity : AppCompatActivity() {
                 .addShapes(Shape.RECT, Shape.CIRCLE)
                 .addSizes(Size(5, 5f))
                 .setPosition(-50f, classicRandomViewKonfetti!!.width + 50f, -50f, -50f)
-                .stream(800, 300L)
+                .stream(1000, 300L)
+
+        val quiz = viewModel.questionOne.value
+        if (quiz != null) {
+            quiz.answered = true
+            viewModel.updateQuestionInfo(quiz)
+
+
+        }
 
 
         val handler = Handler()
         handler.postDelayed({
 
-            textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.rounded_grey)
-
+            textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.choice_answer_back)
+            textView.setTextColor(Color.BLACK)
             nextClassicQuestion()
-
-
         }, 500)
 
 
     }
 
-    private fun success() {
-        classicRandomAnswersLayout.visibility = View.GONE
-        classicRandomResultsFeedBack.visibility = View.VISIBLE
+    private fun success(textView: TextView) {
 
         viewModel.results.observe(this, Observer<Results> { result ->
             if (result != null) {
@@ -190,10 +220,35 @@ class ClassicRandomActivity : AppCompatActivity() {
             }
         })
 
+        /* val result = viewModel.results.value
 
-        classicRandomResultsFeedBack.background = ContextCompat.getDrawable(applicationContext, R.drawable.success_back)
+         Log.d("Result",result.toString())
+         if (result != null) {
+             var engagement = result.engagement
+             engagement += 1
+             var res = result.rxpoints
+             res += 5
+             result.engagement = engagement
+             result.rxpoints = res
+             viewModel.updateResults(result)
 
-        classicRandomResultsFeedBack.text = "Correct"
+         }*/
+
+        textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.success_back)
+        textView.setTextColor(Color.WHITE)
+
+
+        /*classicRandomViewKonfetti!!.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.BLUE)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(300L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .addSizes(Size(5, 5f))
+                .setPosition(classicRandomViewKonfetti.x + classicRandomViewKonfetti.width / 2,
+                        classicRandomViewKonfetti.y + classicRandomViewKonfetti.height / 3)
+                .burst(800)*/
 
         classicRandomViewKonfetti!!.build()
                 .addColors(Color.YELLOW, Color.GREEN, Color.BLUE)
@@ -203,9 +258,8 @@ class ClassicRandomActivity : AppCompatActivity() {
                 .setTimeToLive(200L)
                 .addShapes(Shape.RECT, Shape.CIRCLE)
                 .addSizes(Size(5, 5f))
-                .setPosition(classicRandomViewKonfetti.x + classicRandomViewKonfetti.width / 2, classicRandomViewKonfetti.y + classicRandomViewKonfetti.height / 3)
-                .burst(500)
-
+                .setPosition(-50f, classicRandomViewKonfetti!!.width + 50f, -50f, -50f)
+                .stream(1000, 400L)
 
         val quiz = viewModel.questionOne.value
         if (quiz != null) {
@@ -217,17 +271,12 @@ class ClassicRandomActivity : AppCompatActivity() {
         }
 
 
-        classicRandomResultsFeedBack.setOnClickListener { nextClassicQuestion() }
-
-        /* val handler = Handler()
-         handler.postDelayed({
-             textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.rounded_grey)
-             Log.d("Log","Calling Next quiz")
-             nextClassicQuestion()
-
-
-
-         }, 500)*/
+        val handler = Handler()
+        handler.postDelayed({
+            textView.background = ContextCompat.getDrawable(applicationContext, R.drawable.choice_answer_back)
+            textView.setTextColor(Color.BLACK)
+            nextClassicQuestion()
+        }, 800)
 
 
     }
@@ -235,7 +284,9 @@ class ClassicRandomActivity : AppCompatActivity() {
     private fun nextClassicQuestion() {
         classicRandomAnswersLayout.visibility = View.VISIBLE
         classicRandomResultsFeedBack.visibility = View.GONE
-
+        correctAnswerTv.visibility = View.GONE
+        classicRandomResultsAnswer.visibility = View.GONE
+        nextBtn.visibility = View.GONE
         viewModel.setRandomQuestionLiveData()
 
 

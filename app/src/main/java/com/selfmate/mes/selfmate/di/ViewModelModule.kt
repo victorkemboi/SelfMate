@@ -23,11 +23,6 @@ class ViewModelModule {
 
     @Singleton
     @Provides
-    internal fun providesHotGameViewModel(questionRepo: QuestionRepository, resultsRepository: ResultsRepository): HotGameViewModel =
-            HotGameViewModel(questionRepo, resultsRepository)
-
-    @Singleton
-    @Provides
     internal fun providesAskQuizViewModel(questionRepo: QuestionRepository, firebaseFirestore: FirebaseFirestore): AskQuizViewModel =
             AskQuizViewModel(questionRepo, firebaseFirestore)
 }

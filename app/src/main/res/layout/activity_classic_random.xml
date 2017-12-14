@@ -14,30 +14,25 @@
         android:id="@+id/classicRandomToolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@drawable/gradient_back"
+        android:background="@color/colorAccentLite"
         android:minHeight="?attr/actionBarSize"
         android:titleTextColor="@color/colorPrimaryDark">
 
-        <ImageView
-            android:id="@+id/classicRandomToolbar_ic"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_play_arrow" />
 
         <TextView
-            android:id="@+id/toolbar_title"
+            android:id="@+id/classicRandomTvTopic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="sans-serif"
             android:padding="5dp"
-            android:text="PLAY"
+            android:text="Sport"
             android:textAllCaps="true"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="14sp"
             android:textStyle="bold"
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="9dp" />
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="12dp" />
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
@@ -45,57 +40,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/classicRandomToolbar">
-
-        <nl.dionsegijn.konfetti.KonfettiView
-            android:id="@+id/classicRandomViewKonfetti"
-            android:layout_width="match_parent"
-            android:layout_height="100dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_marginStart="20dp"
-            android:orientation="horizontal"
-
-
-            >
-
-
-            <TextView
-                android:id="@+id/classicRandomTvTopic"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:layout_marginStart="5dp"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="Sport"
-                android:textColor="@color/colorAccent"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="end"
-                android:layout_marginStart="20dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/question" />
-
-
-        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@color/colorAccentLite"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="3dp">
+            android:orientation="vertical">
 
 
             <TextView
@@ -104,48 +58,30 @@
                 android:layout_height="100dp"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="center"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
                 android:text="@string/teaserQuizOneTv"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorWhite"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+
         </LinearLayout>
 
-        <LinearLayout
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/classicRandomViewKonfetti"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="start"
-                android:layout_marginEnd="50dp"
-                android:src="@drawable/ic_thumb_up_off" />
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="start"
-                android:layout_marginStart="50dp"
-                android:src="@drawable/ic_thumb_down_off" />
-
-
-        </LinearLayout>
+            android:layout_height="80dp" />
 
         <LinearLayout
             android:id="@+id/classicRandomAnswersLayout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
             android:visibility="visible">
 
 
@@ -153,19 +89,18 @@
                 android:id="@+id/classicRandomTeaserQuizOneTv1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
                 android:layout_marginEnd="2dp"
                 android:layout_weight="2"
-                android:background="@drawable/rounded_grey"
+                android:background="@drawable/choice_answer_back"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:minHeight="80dp"
+                android:minHeight="60dp"
                 android:padding="2dp"
                 android:text="Yes"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp"
-
-
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
                 android:transitionName="transition">
 
             </TextView>
@@ -175,38 +110,39 @@
                 android:id="@+id/classicRandomTeaserQuizOneTv2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
                 android:layout_marginEnd="2dp"
                 android:layout_weight="2"
-                android:background="@drawable/rounded_grey"
+                android:background="@drawable/choice_answer_back"
                 android:clickable="true"
                 android:gravity="center"
-                android:minHeight="80dp"
+                android:minHeight="60dp"
                 android:padding="2dp"
                 android:text="@string/teaserQuizOneTv2"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/classicRandomTeaserQuizOneTv3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="@drawable/rounded_grey"
+                android:background="@drawable/choice_answer_back"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:minHeight="80dp"
+                android:minHeight="60dp"
                 android:padding="2dp"
                 android:text="@string/teaserQuizOneTv3"
-                android:textColor="@color/colorWhite"
-                android:textSize="14sp" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/classicRandomResultsFeedBack"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="50dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
@@ -216,12 +152,91 @@
             android:minHeight="80dp"
             android:padding="2dp"
             android:text="Yes"
-            android:textColor="@color/colorWhite"
-            android:textSize="14sp"
-
-
+            android:textColor="@color/colorRed"
+            android:textSize="18sp"
             android:transitionName="transition"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/correctAnswerTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Correct Answer"
+            android:textColor="@color/colorPrimaryDark"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/classicRandomResultsAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/gradient_round"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="80dp"
+            android:padding="2dp"
+            android:text="Yes"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:transitionName="transition"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/nextBtn"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_arrow_forward"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_back"
+        android:minHeight="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_thumb_up_off" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_thumb_down_off" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="13dp"
+            android:padding="5dp"
+            android:text="PASS"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
